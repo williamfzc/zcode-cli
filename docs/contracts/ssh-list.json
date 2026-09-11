@@ -1,0 +1,22 @@
+{
+  "method": "ssh_list",
+  "adapter": "ipc-invoke",
+  "bridge_method": "window.zcode.listSSHConfigAliases",
+  "invocation": "await window.zcode.listSSHConfigAliases()",
+  "parameters": {},
+  "side_effect": "read",
+  "response": {
+    "type": "array",
+    "items": {
+      "alias": "string",
+      "host": "string",
+      "port": "number",
+      "username": "string",
+      "privateKeyPath": "string|null|omitted",
+      "source": "string"
+    }
+  },
+  "source_contract": "cdp2cli contracts ssh-list",
+  "live_note": "ZCode 3.11.2 omits privateKeyPath when no key is configured; the CLI also accepts explicit null.",
+  "verified_app_version": "3.11.2"
+}

@@ -1,0 +1,24 @@
+{
+  "app_version": "3.11.2",
+  "bridge": {
+    "object": "window.zcode",
+    "method_count": 120,
+    "methods_writable": false,
+    "methods_configurable": false,
+    "invocation": "Runtime.evaluate(await window.zcode.<method>(), returnByValue=true, awaitPromise=true)"
+  },
+  "commands": {
+    "ssh list": {"method": "listSSHConfigAliases", "returns": "array<{alias:string, host:string, port:number, username:string, privateKeyPath:string|null|omitted, source:string}>"},
+    "system locale": {"method": "getSystemLocale", "returns": "non-empty string"},
+    "system device-id": {"method": "getDeviceId", "returns": "non-empty string"},
+    "editors list": {"method": "getInstalledEditors", "returns": "array<{id:string, name:string, iconDataUrl:string}>"},
+    "docker status": {"method": "isDockerAvailable", "returns": "boolean"},
+    "docker containers": {"method": "listDockerContainers", "returns": "array"},
+    "wsl list": {"method": "listWSLDistros", "returns": "array"},
+    "updates status": {"methods": ["getAutoUpdatePreferences", "getUpdateState"], "returns": "object"},
+    "window state": {"methods": ["getDesktopWindowChromeState", "getDesktopZoomLevel", "getWindowControlsOverlayMetrics"], "returns": "object"},
+    "remote status": {"method": "getWebRemoteControlStatus", "returns": "{status:string}"},
+    "desktop activity": {"method": "getDesktopSessionActivity", "returns": "{runningAgentSessionCount:number, runningRepoWikiTaskCount:number}"},
+    "community status": {"method": "canOpenCommunity", "returns": "boolean"}
+  }
+}
